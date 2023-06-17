@@ -19,3 +19,8 @@ export const LAST_UPDATED: Record<SupportedLocales, string> = {
     ko: "마지막 업데이트: ",
     en: "Last updated on ",
 };
+
+export const TOC_TITLE: Record<SupportedLocales, string> = {
+    ko: "목차",
+    en: "On This Page",
+};

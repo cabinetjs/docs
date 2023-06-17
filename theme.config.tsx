@@ -1,8 +1,9 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
-import useLocalesMap from "./components/useLocalesMap";
-import { EDIT_LINK, FEEDBACK_LINK, LAST_UPDATED, SEARCH_PLACEHOLDER } from "./translations";
 import { useRouter } from "next/router";
+
+import useLocalesMap from "./components/useLocalesMap";
+import { EDIT_LINK, FEEDBACK_LINK, LAST_UPDATED, SEARCH_PLACEHOLDER, TOC_TITLE } from "./translations";
 
 const config: DocsThemeConfig = {
     logo: (
@@ -28,6 +29,7 @@ const config: DocsThemeConfig = {
     },
     toc: {
         float: true,
+        title: () => <>{useLocalesMap(TOC_TITLE)}</>,
     },
     useNextSeoProps: () => ({
         titleTemplate: "%s - CabinetJS",
