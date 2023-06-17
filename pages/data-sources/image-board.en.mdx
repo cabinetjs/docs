@@ -1,0 +1,104 @@
+# Image Board
+
+### Overview [#overview]
+
+Image Board Data Source provides an option to archive thread-based web services. The target web service must provide an
+API that is compatible with [4chan Read-Only API](https://github.com/4chan/4chan-API).
+
+### Option Data Type [#data-type]
+
+The option data type for Image Board Data Source is as follows:
+
+```json
+{
+    "type": "image-board",
+    "name": "4chan-technology",
+    "url": "https://a.4cdn.org",
+    "board": ["g"],
+    "filter": [
+        {
+            "title": "",
+            "content": "",
+            "caseSensitive": false
+        }
+    ]
+}
+```
+
+#### `type` Field [#type-field]
+
+| Item      | Description   |
+|-----------|---------------|
+| Data Type | "image-board" |
+| Required  | ✅             |
+
+The `type` field specifies the type of the data source. For Image Board Data Source, specify `image-board`. This value
+is used to distinguish from other data source types.
+
+#### `name` Field [#name-field]
+
+| Item      | Description   |
+|-----------|---------------|
+| Data Type | String        |
+| Required  | ✅             |
+
+The `name` field specifies the name of the data source. This value can be used to identify the data source when
+checking the log.
+
+#### `url` Field [#url-field]
+
+| Item      | Description   |
+|-----------|---------------|
+| Data Type | String        |
+| Required  | ✅             |
+
+The `url` field specifies the API root URL of the target web service.
+
+#### `board` Field [#board-field]
+
+| Item      | Description   |
+|-----------|---------------|
+| Data Type | String[]      |
+| Required  | ✅             |
+
+The `board` field specifies the board code of the target web service. This value must be specified by checking the
+board list provided by the target web service.
+
+If the specified board code does not exist, the data source will throw an error.
+
+#### `filter` Field [#filter-field]
+
+| Item      | Description   |
+|-----------|---------------|
+| Data Type | [ImageBoardFilter](#image-board-filter)[] |
+| Required  | ❌             |
+
+The `filter` field specifies the filter for filtering the posts of the target web service to be archived. The filter
+compares the title and content of the post and archives only the posts that match.
+
+When specifying multiple filters, the filtering condition is processed by OR operation.
+
+#### `ImageBoardFilter` Data Type [#image-board-filter]
+
+The `ImageBoardFilter` data type defines a filter for the Image Board Data Source.
+
+| Field         | Data Type | Description                          | Required | Default |
+|---------------|-----------|--------------------------------------|----------|---------|
+| title         | String    | Filter for the title of the post     | ❌        | -       |
+| content       | String    | Filter for the content of the post   | ❌        | -       |
+| caseSensitive | Boolean   | Whether the filter is case-sensitive | ❌        | false   |
+
+### Example
+
+```json
+{
+    "type": "image-board",
+    "name": "4chan-technology-cabinetjs",
+    "url": "https://a.4cdn.org",
+    "boards": ["g"],
+    "filters": [{ "title": "cabinetjs" }, { "content": "cabinetjs" }]
+}
+```
+
+The above example archives only the threads that contain "cabinetjs" in the title _**or**_ content on the
+`/g/ - Technology` board of 4chan.

@@ -1,0 +1,47 @@
+import { Callout } from "nextra/components";
+
+# `dataSource` Field
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | Array       |
+| Required  | ✅           |
+
+### Overview
+
+You can specify actual SNS and web services to be crawled in the `dataSource` field. The field value must be in array
+format, and each item must have the following common format.
+
+| Name   | Description                              |
+|--------|------------------------------------------|
+| `type` | Given type of each data source           |
+| `name` | Name of each data source _(for logging)_ |
+
+<Callout type="warning">
+    `name` field of each data source item must be unique.
+</Callout>
+
+### Example
+
+```json5
+{
+    // ...
+    dataSource: [
+        {
+            "type": "example",
+            "name": "test-name"
+        },
+        {
+            "type": "example",
+            "name": "test-name2"
+        }
+    ],
+    // ...
+}
+```
+
+### Learn More
+
+For more information about data sources, please refer to the following link.
+
+[Learn more about data sources](/data-sources/overview)

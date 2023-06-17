@@ -1,0 +1,50 @@
+# Local Storage
+
+### Overview
+
+Local Storage is a storage that stores media files into the local file system.
+
+### Option Data Type
+
+The option data type for local storage is as follows:
+
+```json
+{
+    "type": "local",
+    "path": "/path/to/local/storage"
+}
+```
+
+#### `type` Field [#type-field]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | "local"     |
+| Required  | ✅           |
+
+The `type` field specifies the type of the storage. This value is used to distinguish from other storage types,
+so only `local` can be used.
+
+#### `path` Field [#path-field]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | String      |
+| Required  | ✅           |
+
+The `path` field specifies the path of the storage. This path uses the path of the local file system. If the path does
+not exist, it is automatically created when the program is first run.
+
+You can use both relative and absolute paths. In the case of relative paths, it is based on the directory where
+CabinetJS is executed.
+
+### Example
+
+```json
+{
+  "type": "local",
+  "path": "/path/to/local/storage"
+}
+```
+
+The above example creates a local storage in the `/path/to/local/storage` path.

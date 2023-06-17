@@ -1,0 +1,75 @@
+# S3 Storage
+
+### Overview
+
+S3 Storage is a storage that stores data in S3 compatible storage. This storage can use with AWS S3,
+[MinIO](https://min.io/), etc.
+
+### Option Data Type
+
+The option data type for s3 storage is as follows:
+
+```json
+{
+    "bucketName": "bucket-name",
+    "region": "region",
+    "endpoint": "endpoint",
+    "credentials": {
+        "accessKeyId": "<ACCESS_KEY_ID>",
+        "secretAccessKey": "<SECRET_ACCESS_KEY>"
+    }
+}
+```
+
+#### `bucketName` Field [#bucket-name]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | String      |
+| Required  | ✅           |
+
+The name of the bucket to store data in.
+
+#### `region` Field [#region]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | String      |
+| Required  | ✅           |
+
+The name of the region where the bucket is located.
+
+#### `endpoint` Field [#endpoint]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | String      |
+| Required  | ❌           |
+
+The URL of the endpoint that can access the bucket. If this value is not set, the default endpoint of AWS S3 is used.
+
+#### `credentials` Field [#credentials]
+
+| Item     | Description |
+|----------|-------------|
+| Data Type | Object      |
+| Required  | ❌           |
+
+The credentials to access the bucket. If this value is not set, the default credentials are used.
+
+### Example
+
+```json
+{
+    "bucketName": "cabinetjs-data",
+    "region": "ap-northeast-2",
+    "endpoint": "https://endpoint",
+    "credentials": {
+        "accessKeyId": "<ACCESS_KEY_ID>",
+        "secretAccessKey": "<SECRET_ACCESS_KEY>"
+    }
+}
+```
+
+The above example creates an S3 compatible storage that accesses and stores in the bucket named `cabinetjs-data` in the
+`ap-northeast-2` region using the provided credentials.

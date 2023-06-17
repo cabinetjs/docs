@@ -1,0 +1,6 @@
+{
+    "overview": "개요",
+    "data-source": "dataSource 필드",
+    "crawl-interval": "crawlInterval 필드",
+    "storage": "storage 필드"
+}

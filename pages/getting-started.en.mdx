@@ -1,0 +1,80 @@
+import { Tab, Tabs } from "nextra-theme-docs";
+import { Callout } from 'nextra/components'
+
+# Getting Started [#getting-started]
+
+### Prerequisite [#prerequisite]
+
+NodeJS must be installed first since CabinetJS runs on NodeJS environment. If NodeJS is not installed, you can follow
+instruction from [Official NodeJS Webpage](https://nodejs.org/ko/). The minimum version of NodeJS must be `18.16.0` or higher.
+
+### Installation [#install]
+
+You can install CabinetJS via NodeJS package manager. You can use `npm`, `yarn`, `pnpm`, etc.
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+    <Tab>
+        ```bash
+        npm install -g @cabinet/cabinet
+        ```
+    </Tab>
+    <Tab>
+        ```bash
+        yarn global add @cabinet/cabinet
+        ```
+    </Tab>
+    <Tab>
+        ```bash
+        pnpm install -g @cabinet/cabinet
+        ```
+    </Tab>
+</Tabs>
+
+If you installed CabinetJS via above command, the stable version of CabinetJS will be installed. If you want to install
+the latest development version of CabinetJS, you can add `@dev` tag after the command.
+
+<Callout type="warning">
+    In most cases, it is recommended to install the stable version of CabinetJS. The latest development version may not be stable.
+</Callout>
+
+<Tabs items={["npm", "yarn", "pnpm"]}>
+    <Tab>
+        ```bash
+        npm install -g @cabinet/cabinet@dev
+        ```
+    </Tab>
+    <Tab>
+        ```bash
+        yarn global add @cabinet/cabinet@dev
+        ```
+    </Tab>
+    <Tab>
+        ```bash
+        pnpm install -g @cabinet/cabinet@dev
+        ```
+    </Tab>
+</Tabs>
+
+### Usage [#run]
+
+Once you have successfully installed CabinetJS, you can run CabinetJS via `cabinet` command. When CabinetJS is running,
+it will find the configuration file in the current directory. If there is no configuration file, CabinetJS will create a
+new configuration file with default values.
+
+For more information about the configuration file, see [Configuration](/config/overview).
+
+```bash
+$ cabinet
+```
+
+With `--help` command line option, you can see the CabinetJS CLI command line help.
+
+```bash
+$ cabinet -h
+
+Usage: cabinet [options]
+
+Options:
+  -c, --config <path>  Path to config file (default: "./cabinet.config.json")
+  -h, --help           display help for command
+```

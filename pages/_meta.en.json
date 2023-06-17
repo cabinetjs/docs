@@ -1,3 +1,7 @@
 {
-    "index": "Introduction"
+    "index": "Introduction",
+    "getting-started": "Getting Started",
+    "config": "Configuration",
+    "data-sources": "Data Sources",
+    "storages": "Storages"
 }

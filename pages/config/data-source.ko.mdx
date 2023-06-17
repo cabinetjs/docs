@@ -1,0 +1,47 @@
+import { Callout } from "nextra/components";
+
+# `dataSource` 필드
+
+| 항목     | 설명    |
+|--------|-------|
+| 데이터 타입 | Array |
+| 필수     | ✅     |
+
+### 개요
+
+`dataSource` 필드는 크롤링할 대상이 될 실제 SNS 및 웹 서비스를 명시할 수 있습니다. 필드 값은 배열 형식을 지켜야하며, 각각의 항목은 다음과
+같은 공통 형식을 가집니다.
+
+| 이름     | 값 설명                          |
+|--------|-------------------------------|
+| `type` | 해당 데이터 소스 타입                  |
+| `name` | 데이터 소스 이름 _(로그를 확인할 때 유용합니다)_ |
+
+<Callout type="warning">
+    데이터 소스 항목의 `name` 필드는 중복될 수 없습니다.
+</Callout>
+
+### 예시
+
+```json5
+{
+    // ...
+    dataSource: [
+        {
+            "type": "example",
+            "name": "test-name"
+        },
+        {
+            "type": "example",
+            "name": "test-name2"
+        }
+    ],
+    // ...
+}
+```
+
+### 둘러보기
+
+자세한 내용은 다음 링크를 참고해주세요.
+
+[데이터 소스 둘러보기](/ko/data-sources/overview)

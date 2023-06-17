@@ -1,0 +1,31 @@
+# Configuration [#configuration]
+
+### Description [#description]
+
+You can personalize your experience with CabinetJS by using a configuration file. You can specify the SNS and web
+services to archive, the crawling interval, the content filtering, and the web API server through the configuration.
+
+### Config Path [#path]
+
+When you run CabinetJS, it will look for a `cabinet.config.json` file in the current directory. You can specify the
+path to the configuration file with the `-c`, `--config` option.
+
+```bash
+$ cabinet -c /path/to/config.json
+```
+
+If the configuration file does not exist in the specified path, CabinetJS will create a new configuration file with
+[default settings](#default-settings).
+
+### Default Configuration [#default-settings]
+
+```json
+{
+    "dataSources": [],
+    "crawlInterval": 1800000,
+    "storage": {
+        "type": "local",
+        "path": "./downloads"
+    }
+}
+```

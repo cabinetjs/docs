@@ -1,3 +1,7 @@
 {
-    "index": "소개"
+    "index": "소개",
+    "getting-started": "시작하기",
+    "config": "설정 파일",
+    "data-sources": "데이터 소스",
+    "storages": "저장소"
 }
