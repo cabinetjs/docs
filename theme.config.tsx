@@ -15,7 +15,7 @@ const config: DocsThemeConfig = {
         link: "https://github.com/cabinetjs",
     },
     footer: {
-        text: "Nextra Docs Template",
+        component: () => null,
     },
     search: {
         placeholder: () => useLocalesMap(SEARCH_PLACEHOLDER),
