@@ -4,6 +4,11 @@
     src: local("SUIT Variable Regular"), url("/SUIT-Variable.woff2") format("woff2-variations");
 }
 
-* {
+:not(pre span):not(code span) {
     font-family: "SUIT Variable", sans-serif;
+}
+
+pre,
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
 }
