@@ -1,0 +1,71 @@
+# GraphQL API [#index]
+
+### 개요 [#overview]
+
+GraphQL API는 GraphQL 쿼리를 사용하여 데이터를 요청 할 수 있는 형식의 API를 제공합니다. GraphQL API는 GraphQL 쿼리를 사용하여 데이터를
+요청하고 응답으로 JSON을 반환합니다.
+
+### 설정 데이터 구조
+
+설정 데이터는 다음과 같은 구조를 가집니다.
+
+```json
+{
+    "type": "graphql",
+    "port": 3000,
+    "endpoint": "/graphql",
+    "playground": true
+}
+```
+
+#### `type` 필드 [#type-field]
+
+| 항목     | 내용        |
+|--------|-----------|
+| 데이터 형식 | "graphql" |
+| 필수 여부  | ✅         |
+
+`type` 필드는 GraphQL API를 사용하도록 설정합니다. 이 필드는 `graphql`로 설정해야 합니다.
+
+#### `port` 필드 [#port-field]
+
+| 항목     | 내용  |
+|--------|-----|
+| 데이터 형식 | Int |
+| 필수 여부  | ✅   |
+
+`port` 필드는 GraphQL API가 사용할 포트 번호를 설정합니다. 이 필드는 정수형 형식으로 설정해야 합니다.
+
+#### `endpoint` 필드 [#endpoint-field]
+
+| 항목     | 내용     |
+|--------|--------|
+| 데이터 형식 | String |
+| 필수 여부  | ❌      |
+| 기본값    | "/graphql" |
+
+`endpoint` 필드는 GraphQL API가 사용할 엔드포인트를 설정합니다.
+
+#### `playground` 필드 [#playground-field]
+
+| 항목     | 내용        |
+|--------|-----------|
+| 데이터 형식 | Boolean   |
+| 필수 여부  | ❌         |
+| 기본값    | false     |
+
+`playground` 필드는 GraphQL API를 테스트 해볼 수 있는 Playground를 사용할지 여부를 설정합니다.
+
+### 예시 [#example]
+
+```json
+{
+    "type": "graphql",
+    "port": 1337,
+    "endpoint": "/gql-endpoint",
+    "playground": true
+}
+```
+
+위 예시는 GraphQL API를 사용하도록 설정하고, 포트 번호를 1337로 설정하며, 엔드포인트를 `/gql-endpoint`로 설정하고, Playground를
+사용하도록 설정합니다.

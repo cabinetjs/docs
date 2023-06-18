@@ -1,0 +1,71 @@
+# GraphQL API [#index]
+
+### Overview [#overview]
+
+GraphQL API is an API that provides a format of requesting data using [GraphQL queries](https://graphql.org/). GraphQL
+API uses GraphQL queries to request data and returns JSON as a response.
+
+### Option Data Type [#data-type]
+
+The option data type for GraphQL API is as follows:
+
+```json
+{
+    "type": "graphql",
+    "port": 3000,
+    "endpoint": "/graphql",
+    "playground": true
+}
+```
+
+#### `type` Field [#type-field]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | "graphql"   |
+| Required  | ✅           |
+
+The `type` field sets the API to use GraphQL API. This field must be set to `graphql`.
+
+#### `port` Field [#port-field]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | Int         |
+| Required  | ✅           |
+
+The `port` field sets the port number that the GraphQL API will use. This field must be set to an integer.
+
+#### `endpoint` Field [#endpoint-field]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | String      |
+| Required  | ❌           |
+| Default   | "/graphql"  |
+
+The `endpoint` field sets the endpoint that the GraphQL API will use.
+
+#### `playground` Field [#playground-field]
+
+| Item      | Description |
+|-----------|-------------|
+| Data Type | Boolean     |
+| Required  | ❌           |
+| Default   | false       |
+
+The `playground` field sets whether to use Playground that can be used to test GraphQL queries.
+
+### Example [#example]
+
+```json
+{
+    "type": "graphql",
+    "port": 1337,
+    "endpoint": "/gql-endpoint",
+    "playground": true
+}
+```
+
+The above example sets the API to use GraphQL API, sets the port number to 1337, sets the endpoint to `/gql-endpoint`,
+and sets to use Playground.

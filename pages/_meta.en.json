@@ -3,5 +3,6 @@
     "getting-started": "Getting Started",
     "config": "Configuration",
     "data-sources": "Data Sources",
-    "storages": "Storages"
+    "storages": "Storages",
+    "server-api": "API"
 }
