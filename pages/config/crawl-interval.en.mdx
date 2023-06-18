@@ -1,11 +1,11 @@
-# `crawlInterval` Field
+# `crawlInterval` Field [#index]
 
 | Item      | Description |
 |-----------|-------------|
 | Data Type | Int, String |
 | Required  | ✅           |
 
-### Overview
+### Overview [#overview]
 
 You can specify how often the crawling job will run with the `crawlInterval` field. The field value must be in the form
 of a number or string value.
@@ -16,7 +16,7 @@ the crawling interval is set in `vercel/ms` [supported units](https://github.com
 CabinetJS starts crawling when the crawling interval is reached. If the crawling job is already running, CabinetJS
 will not start crawling until the next crawling interval.
 
-### Valid Values
+### Valid Values [#valid-values]
 
 The `crawlInterval` field accepts the following values.
 
@@ -24,7 +24,7 @@ The `crawlInterval` field accepts the following values.
 - String value in `ms`, `s`, `m`, `h` units [(reference)](https://github.com/vercel/ms)
 - Cron expression
 
-### Examples
+### Examples [#examples]
 
 ```json
 {
